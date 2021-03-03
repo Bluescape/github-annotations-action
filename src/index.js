@@ -22,6 +22,7 @@ main().catch((err) => core.setFailed(err.message))
 
 function handleCodeceptOutput (reportPath) {
   const results = require(reportPath).results[0].suites
+  console.log(results)
   const output = []
   results.forEach((suite) => {
     const suiteOutput = { title: suite.title, failedTests: [], failedHooks: [] }
