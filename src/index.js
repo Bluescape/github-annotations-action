@@ -34,7 +34,7 @@ function handleCodeceptOutput (reportPath) {
     suite.tests.forEach((test) => {
       if (test.fail) suiteOutput.failedTests.push(`${test.title}\n${test.err.message}\n`)
     })
-    output.append(suiteOutput)
+    output.push(suiteOutput)
   })
   return output
 }
