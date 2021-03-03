@@ -2,9 +2,9 @@ const core = require('@actions/core')
 
 const main = async () => {
   const resultsPath = core.getInput('resultPath')
-  const codeceptOutput = core.getInput('codeceptInput') || undefined
+  const codeceptInput = core.getInput('codeceptInput') || undefined
   let results
-  if (codeceptOutput) {
+  if (codeceptInput) {
     results = handleCodeceptOutput(resultsPath)
     console.log(results)
   }
