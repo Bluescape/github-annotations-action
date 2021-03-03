@@ -5,9 +5,7 @@ const main = async () => {
   const codeceptInput = core.getInput('codeceptInput') || undefined
   let results
   if (codeceptInput) {
-      console.log("Hello world")
     results = handleCodeceptOutput(resultsPath)
-    console.log(results)
   }
   results.forEach((suite) => {
     if (suite.failedTests.length > 0) {
@@ -23,7 +21,6 @@ main().catch((err) => core.setFailed(err.message))
 
 function handleCodeceptOutput (reportPath) {
   const results = require(reportPath).results[0].suites
-  console.log(results)
   const output = []
   results.forEach((suite) => {
     const suiteOutput = { title: suite.title, failedTests: [], failedHooks: [] }
