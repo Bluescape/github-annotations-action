@@ -5,6 +5,7 @@ const main = async () => {
   const codeceptInput = core.getInput('codeceptInput') || undefined
   let results
   if (codeceptInput) {
+      console.log("Hello world")
     results = handleCodeceptOutput(resultsPath)
     console.log(results)
   }

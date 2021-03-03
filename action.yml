@@ -8,7 +8,7 @@ inputs:
   resultPath:
     description: "Path of JSON file containing results"
     required: true
-  codeceptOutput:
+  codeceptInput:
     description: "Whether or not this is a Codecept output"
     required: true
   pathDescriptor: 
