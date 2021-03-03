@@ -15,5 +15,6 @@ inputs:
     description: "If not a codecept output, this is a descriptor of where the tests will be"
     required: false
 
+runs: 
   using: "node12"
   main: "src/index.js"
