@@ -1,5 +1,5 @@
 name: "Github Annotations bot"
-description: "Annotates things (Come up with a better description before PR)"
+description: "Reads in a file and raises errors if there's any errors present"
 author: "Fiona Hu"
 branding:
   icon: "message-square"
