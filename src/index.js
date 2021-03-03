@@ -6,6 +6,7 @@ const main = async () => {
   let results
   if (codeceptOutput) {
     results = handleCodeceptOutput(resultsPath)
+    console.log(results)
   }
   results.forEach((suite) => {
     if (suite.failedTests.length > 0) {
