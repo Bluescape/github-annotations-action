@@ -8,7 +8,12 @@ inputs:
   resultPath:
     description: "Path of JSON file containing results"
     required: true
+  codeceptOutput:
+    description: "Whether or not this is a Codecept output"
+    required: true
+  pathDescriptor: 
+    description: "If not a codecept output, this is a descriptor of where the tests will be"
+    required: false
 
-runs:
   using: "node12"
   main: "src/index.js"
