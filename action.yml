@@ -1,0 +1,14 @@
+name: "Github Annotations bot"
+description: "Annotates things (Come up with a better description before PR)"
+author: "Fiona Hu"
+branding:
+  icon: "message-square"
+  color: "blue"
+inputs:
+  resultPath:
+    description: "Path of JSON file containing results"
+    required: true
+
+runs:
+  using: "node12"
+  main: "src/index.js"
