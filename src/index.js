@@ -14,6 +14,8 @@ const main = async () => {
         core.setFailed(`${suite.title} - ${suite.failedHooks.length} hook(s) failed: \n${suite.failedHooks.join('\n')}`)
       }
     })
+  } else {
+    core.setFailed('Report type not set!')
   }
 }
 

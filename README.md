@@ -8,17 +8,17 @@ Create a workflow `.yml` file in your `.github/workflows` directory. An example 
 ### Inputs
 There are two mandatory inputs to this action
 - `result_path`: The path to the JSON file that we want to read in 
-- `codecept_input`: whether or not this JSON file matches Codecept's JSON output spec
+- `report_type`: whether or not this JSON file matches Codecept's JSON output spec
 
 ## Example Workflow
 ```yaml
   - name: Annotate failures
     uses: Bluescape/github-annotations-action@v0.0.1
     with: 
-        result_path: ${{ env.TEST_ROOT_DIR }}/output/report.json
-        codecept_input: true
+        report_path: ./output/report.json
+        input_type: 
 ```
-This will read the `report.json` at `${{ env.TEST_ROOT_DIR }}/output` and parse it as if it were a CodeceptJS json. 
+This will read the `report.json` at `./output/` and parse it as if it were a CodeceptJS json. 
 
 ## To Do
 Implement the ability to take in more types of output and parse them. 
