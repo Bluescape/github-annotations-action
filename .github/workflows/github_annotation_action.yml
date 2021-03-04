@@ -3,7 +3,7 @@ name: Annotation poster
 on: [pull_request, repository_dispatch]
 
 jobs:
-  post-to-slack:
+  annotate-failures:
     runs-on: ubuntu-latest
     steps:
       - name: Dump Github context
@@ -18,4 +18,5 @@ jobs:
       - name: Run script
         uses: ./
         with:
-          result_path: "./sampleCodeceptReport.json"
+          report_path: "./sampleCodeceptReport.json"
+          
