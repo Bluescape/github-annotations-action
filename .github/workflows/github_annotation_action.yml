@@ -1,4 +1,3 @@
-
 name: Annotation poster
 on: [pull_request, repository_dispatch]
 
