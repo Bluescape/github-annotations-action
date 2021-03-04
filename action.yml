@@ -5,15 +5,12 @@ branding:
   icon: "message-square"
   color: "blue"
 inputs:
-  resultPath:
+  result_path:
     description: "Path of JSON file containing results"
     required: true
-  codeceptInput:
+  codecept_input:
     description: "Whether or not this is a Codecept output"
     required: true
-  pathDescriptor: 
-    description: "If not a codecept output, this is a descriptor of where the tests will be"
-    required: false
 
 runs: 
   using: "node12"

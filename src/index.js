@@ -1,22 +1,21 @@
 const core = require('@actions/core')
 
 const main = async () => {
-  const resultsPath = core.getInput('resultPath')
-  const codeceptInput = core.getInput('codeceptInput') || undefined
+  const resultsPath = core.getInput('result_path')
+  const codeceptInput = core.getInput('codecept_input') || undefined
   let results
   if (codeceptInput) {
     results = handleCodeceptOutput(resultsPath)
+    results.forEach((suite) => {
+      if (suite.failedTests.length > 0) {
+        core.setFailed(`${suite.title} - ${suite.failedTests.length} test(s) failed: \n${suite.failedTests.join('\n')}`)
+      }
+      if (suite.failedHooks.length > 0) {
+        core.setFailed(`${suite.title} - ${suite.failedHooks.length} hook(s) failed: \n${suite.failedHooks.join('\n')}`)
+      }
+    })
   }
-  results.forEach((suite) => {
-    if (suite.failedTests.length > 0) {
-      core.setFailed(`${suite.title} - ${suite.failedTests.length} test(s) failed: \n${suite.failedTests.join('\n')}`)
-    }
-    if (suite.failedHooks.length > 0) {
-      core.setFailed(`${suite.title} - ${suite.failedHooks.length} hook(s) failed: \n${suite.failedHooks.join('\n')}`)
-    }
-  })
 }
-
 main().catch((err) => core.setFailed(err.message))
 
 function handleCodeceptOutput (reportPath) {
