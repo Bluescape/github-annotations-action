@@ -2,9 +2,9 @@ const core = require('@actions/core')
 
 const main = async () => {
   const resultsPath = core.getInput('result_path')
-  const codeceptInput = core.getInput('codecept_input') || undefined
+  const reportType = core.getInput('report_type') || undefined
   let results
-  if (codeceptInput) {
+  if (reportType === 'codeceptjs') {
     results = handleCodeceptOutput(resultsPath)
     results.forEach((suite) => {
       if (suite.failedTests.length > 0) {
@@ -16,7 +16,6 @@ const main = async () => {
     })
   }
 }
-main().catch((err) => core.setFailed(err.message))
 
 function handleCodeceptOutput (reportPath) {
   const results = require(reportPath).results[0].suites
@@ -36,3 +35,5 @@ function handleCodeceptOutput (reportPath) {
   })
   return output
 }
+
+main().catch((err) => core.setFailed(err.message))
