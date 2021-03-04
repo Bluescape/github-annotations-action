@@ -25,5 +25,5 @@ jobs:
       - name: Run script
         uses: ./
         with:
-          resultPath: "./report.json"
-          codeceptInput: true
+          result_path: "./sampleCodeceptReport.json"
+          codecept_input: true
