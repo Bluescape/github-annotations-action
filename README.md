@@ -16,7 +16,7 @@ There are two mandatory inputs to this action
     uses: Bluescape/github-annotations-action@v0.0.1
     with: 
         report_path: ./output/report.json
-        input_type: codeceptjs
+        report_type: codeceptjs
 ```
 This will read the `report.json` at `./output/` and parse it as if it were a CodeceptJS json. 
 
