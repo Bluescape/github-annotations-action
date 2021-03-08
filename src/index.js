@@ -1,7 +1,8 @@
 const core = require('@actions/core')
+const path = require('path')
 
 const main = async () => {
-  const resultsPath = core.getInput('report_path')
+  const resultsPath = path.resolve(core.getInput('report_path'))
   const reportType = core.getInput('report_type') || undefined
   let results
   if (reportType === 'codeceptjs') {
