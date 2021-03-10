@@ -13,7 +13,7 @@ There are two mandatory inputs to this action
 ## Example Workflow
 ```yaml
   - name: Annotate failures
-    uses: Bluescape/github-annotations-action@v0.0.1
+    uses: Bluescape/github-annotations-action@v0.0.3
     with: 
         report_path: ./output/report.json
         report_type: codeceptjs
